@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get a Quote — Check Your Date | Pizza Buddies</title>
+  <meta name="description" content="Build an instant estimate for Neapolitan pizza catering at your wedding, party or corporate event in Leicester &amp; the East Midlands — then check your date directly with the founders.">
+  <link rel="canonical" href="https://pizzabuddies.co.uk/quote.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pizza Buddies">
+  <meta property="og:title" content="Get a Quote — Pizza Buddies">
+  <meta property="og:description" content="Two minutes, five questions, an honest estimate — then the founders personally confirm your date.">
+  <meta property="og:url" content="https://pizzabuddies.co.uk/quote.html">
+  <meta property="og:image" content="https://pizzabuddies.co.uk/assets/img/og-cover.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="site-head__inner">
+      <a class="logo" href="index.html" aria-label="Pizza Buddies — home">
+        <span class="logo__word">Pizza Buddies</span>
+        <span class="logo__tri" aria-hidden="true"></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="corporate-events.html">Corporate</a></li>
+          <li><a href="private-events.html">Private Events</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a class="btn btn--light" href="quote.html" aria-current="page">Get a Quote</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="corporate-events.html">Corporate</a></li>
+      <li><a href="private-events.html">Private Events</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">Our Story</a></li>
+    </ul>
+    <div class="mobile-nav__foot">
+      <a class="btn btn--light" href="quote.html">Get a Quote</a>
+      <p class="mobile-nav__meta">Leicester &amp; the East Midlands · @pizzabuddiesuk</p>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero hero--page">
+      <div class="hero__inner" style="grid-template-columns:1fr">
+        <div class="hero__copy">
+          <p class="kicker">Get a quote</p>
+          <h1>An honest estimate, then a human answer</h1>
+          <hr class="tri-rule" aria-hidden="true">
+          <p class="lede">Five questions, two minutes, a realistic number for your budget. Then Priten and Vishant personally check your date — every event is confirmed by the founders, never by an algorithm.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ESTIMATE TOOL ============ -->
+    <section class="sec">
+      <div class="container">
+        <div class="quote-layout">
+          <div>
+            <noscript>
+              <p style="border:1px solid var(--it-red); padding:16px 20px; margin-bottom:28px">
+                The estimate builder needs JavaScript. No problem — email
+                <a href="mailto:info@pizzabuddies.co.uk">info@pizzabuddies.co.uk</a>
+                with your date, location, guest count and preferred package
+                (Classic from £16pp / Premium from £18pp) and we’ll reply with a quote.
+              </p>
+            </noscript>
+
+            <ol class="progress" aria-label="Quote steps">
+              <li aria-current="step">Your event</li>
+              <li>Your estimate</li>
+              <li>Check availability</li>
+            </ol>
+
+            <form id="quote-form" novalidate>
+
+              <!-- ================= STEP 1 — inputs ================= -->
+              <fieldset class="qstep" data-step="1">
+                <h2 tabindex="-1">Tell us about your event</h2>
+                <div class="fields">
+                  <div class="field">
+                    <label for="event-location">Event location</label>
+                    <input type="text" id="event-location" name="event-location" required
+                           autocomplete="postal-code" placeholder="Postcode or town — e.g. LE2, Market Harborough">
+                    <p class="err" aria-live="polite"></p>
+                  </div>
+                  <div class="field">
+                    <label for="event-type">Event type</label>
+                    <select id="event-type" name="event-type" required>
+                      <option value="" selected disabled>Choose an event type…</option>
+                      <option>Wedding</option>
+                      <option>Mehndi</option>
+                      <option>Engagement</option>
+                      <option>Birthday</option>
+                      <option>Corporate</option>
+                      <option>Festival</option>
+                      <option>Other</option>
+                    </select>
+                    <p class="err" aria-live="polite"></p>
+                  </div>
+                  <div class="field">
+                    <label for="guest-count">Guest count</label>
+                    <input type="number" id="guest-count" name="guest-count" required
+                           min="1" max="2000" inputmode="numeric" placeholder="e.g. 80">
+                    <p class="hint">A best guess is fine — we’ll fine-tune it together.</p>
+                    <p class="err" aria-live="polite"></p>
+                  </div>
+                  <div class="field">
+                    <label for="event-date">Event date</label>
+                    <input type="date" id="event-date" name="event-date" required>
+                    <p class="err" aria-live="polite"></p>
+                  </div>
+                  <div class="field">
+                    <label for="event-time">Serving time</label>
+                    <input type="time" id="event-time" name="event-time" required>
+                    <p class="err" aria-live="polite"></p>
+                  </div>
+                  <div class="field field--full">
+                    <span class="field__legend" id="pkg-legend">Package</span>
+                    <div class="pkg-grid" role="radiogroup" aria-labelledby="pkg-legend">
+                      <div class="pkg">
+                        <input type="radio" id="pkg-classic" name="package" value="classic" required>
+                        <label for="pkg-classic">
+                          <b>Classic</b>
+                          <span class="pkg__price">£16 <span style="font-size:0.5em">from, pp</span></span>
+                          <p>The signature experience — our Neapolitan pizzas, hand-stretched and cooked live for your guests.</p>
+                        </label>
+                      </div>
+                      <div class="pkg">
+                        <input type="radio" id="pkg-premium" name="package" value="premium" required>
+                        <label for="pkg-premium">
+                          <b>Premium</b>
+                          <span class="pkg__price">£18 <span style="font-size:0.5em">from, pp</span></span>
+                          <p>The full spread — wider menu choice, made for weddings and showpiece events.</p>
+                        </label>
+                      </div>
+                    </div>
+                    <p class="err" aria-live="polite"></p>
+                  </div>
+                </div>
+                <div class="qstep__actions">
+                  <button type="button" class="btn btn--lg" data-next>See my estimate</button>
+                </div>
+              </fieldset>
+
+              <!-- ================= STEP 2 — estimate output ================= -->
+              <fieldset class="qstep" data-step="2" hidden>
+                <h2 tabindex="-1">Your estimate</h2>
+                <div class="estimate-card" aria-live="polite">
+                  <p class="kicker">Estimated cost</p>
+                  <p class="estimate-card__range" id="est-range">—</p>
+                  <p class="estimate-card__note">This is an estimate to help you budget — based on your guest count and package, before travel and location are factored in. Every event is confirmed personally by Priten and Vishant to make sure we can deliver on your date.</p>
+                  <p class="estimate-card__minflag" id="est-minflag"></p>
+                  <ul class="est-recap" id="est-recap"></ul>
+                </div>
+                <div class="qstep__actions">
+                  <button type="button" class="btn-back" data-back>← Adjust details</button>
+                  <button type="button" class="btn btn--lg" data-next>Looks right — check availability</button>
+                </div>
+              </fieldset>
+
+              <!-- ================= STEP 3 — lead capture ================= -->
+              <fieldset class="qstep" data-step="3" hidden>
+                <h2 tabindex="-1">Check availability for this date</h2>
+                <p style="margin-bottom:1.8rem">This is where a human takes over. Send us your details and Priten or Vishant will come back to you personally to confirm whether your date is free — nothing is booked automatically.</p>
+                <div class="fields">
+                  <div class="field">
+                    <label for="contact-name">Your name</label>
+                    <input type="text" id="contact-name" name="contact-name" required autocomplete="name">
+                    <p class="err" aria-live="polite"></p>
+                  </div>
+                  <div class="field">
+                    <label for="contact-phone">Phone</label>
+                    <input type="tel" id="contact-phone" name="contact-phone" required autocomplete="tel">
+                    <p class="err" aria-live="polite"></p>
+                  </div>
+                  <div class="field field--full">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" name="contact-email" required autocomplete="email">
+                    <p class="err" aria-live="polite"></p>
+                  </div>
+                  <div class="field field--full">
+                    <label for="contact-notes">Anything we should know? <span style="opacity:.5">(optional)</span></label>
+                    <textarea id="contact-notes" name="contact-notes" placeholder="Venue details, dietary requirements, timings…"></textarea>
+                  </div>
+                </div>
+                <div class="qstep__actions">
+                  <button type="button" class="btn-back" data-back>← Back to estimate</button>
+                  <button type="submit" class="btn btn--lg">Check availability for this date</button>
+                </div>
+                <p class="smallprint">Submitting opens an email to info@pizzabuddies.co.uk with your details filled in — press send and it’s with us.</p>
+              </fieldset>
+            </form>
+
+            <!-- ================= CONFIRMATION ================= -->
+            <div class="quote-done" id="quote-done" hidden>
+              <p class="kicker">One last tap</p>
+              <h2 tabindex="-1">Your enquiry is ready to send</h2>
+              <p>Your email app should have just opened with everything below filled in — hit send and your date lands directly with Priten and Vishant. They’ll come back to you personally.</p>
+              <pre id="summary-text" aria-label="Your enquiry summary"></pre>
+              <p>If your email app didn’t open, copy the summary and send it to
+                <a href="mailto:info@pizzabuddies.co.uk">info@pizzabuddies.co.uk</a>
+                — or just call us on <a href="tel:+447972611157">07972 611157</a>.</p>
+              <div class="qstep__actions">
+                <button type="button" class="btn" id="copy-summary">Copy summary</button>
+                <a class="btn btn--ghost" href="mailto:info@pizzabuddies.co.uk">Open a blank email instead</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= ASIDE ================= -->
+          <aside aria-label="Contact details and booking terms">
+            <div class="aside-card aside-card--dark">
+              <h3>Prefer to talk it through?</h3>
+              <ul>
+                <li><b>Email</b><a href="mailto:info@pizzabuddies.co.uk">info@pizzabuddies.co.uk</a></li>
+                <li><b>Priten</b><a href="tel:+447972611157">07972 611157</a></li>
+                <li><b>Vishant</b><a href="tel:+447503864419">07503 864419</a></li>
+                <li><b>Instagram</b><a href="https://www.instagram.com/pizzabuddiesuk" rel="noopener">@pizzabuddiesuk</a></li>
+              </ul>
+            </div>
+            <div class="aside-card">
+              <h3>The small print</h3>
+              <ul>
+                <li><b>Minimum hire</b>From £900, depending on location</li>
+                <li><b>Securing a date</b>25% deposit, balance due two weeks before your event</li>
+                <li><b>Space we need</b>3m × 3m pitch plus a power supply</li>
+                <li><b>Service area</b>Leicester, Leicestershire &amp; the East Midlands</li>
+                <li><b>Dietaries</b>Fully vegetarian menu; vegan &amp; gluten-free options on request</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <div class="site-foot__tri" aria-hidden="true"></div>
+    <div class="container">
+      <div class="site-foot__grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="Pizza Buddies — home">
+            <span class="logo__word">Pizza Buddies</span>
+            <span class="logo__tri" aria-hidden="true"></span>
+          </a>
+          <p class="site-foot__blurb">Fully vegetarian Neapolitan pizza, cooked live at weddings, parties and workplaces across Leicestershire and the East Midlands. Est. 2021.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="corporate-events.html">Corporate Events</a></li>
+            <li><a href="private-events.html">Private Events</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>Contact</h3>
+          <address>
+            <ul>
+              <li><a href="mailto:info@pizzabuddies.co.uk">info@pizzabuddies.co.uk</a></li>
+              <li><a href="tel:+447972611157">07972 611157</a></li>
+              <li><a href="tel:+447503864419">07503 864419</a></li>
+              <li><a href="https://www.instagram.com/pizzabuddiesuk" rel="noopener">@pizzabuddiesuk</a></li>
+            </ul>
+          </address>
+        </div>
+        <div>
+          <h3>Good to know</h3>
+          <div class="badges">
+            <span class="badge">NCASS Registered</span>
+            <span class="badge">Level 2 Food Hygiene</span>
+          </div>
+          <p class="site-foot__blurb">Serving Leicester, Leicestershire &amp; the East Midlands. Minimum hire from £900. We need a 3m × 3m pitch and a power supply.</p>
+        </div>
+      </div>
+      <div class="site-foot__bottom">
+        <p>© <span data-year>2026</span> Pizza Buddies · Leicester, UK</p>
+        <p><a href="quote.html">Check your date →</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/quote.js" defer></script>
+</body>
+</html>

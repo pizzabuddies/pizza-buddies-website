@@ -1,0 +1,18 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# env — never commit API keys
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# local tooling / previous static build kept for reference
+/.claude/
