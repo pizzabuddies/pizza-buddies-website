@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import QuoteTool from '@/components/QuoteTool';
 
 export const metadata: Metadata = {
-  title: 'Get a Quote — Check Your Date',
+  title: 'Get a Quote: Check Your Date',
   description:
-    'Build an instant estimate for Neapolitan pizza catering at your wedding, party or celebration in Leicester & the East Midlands — then check your date directly with the founders.',
+    'Build an instant estimate for Neapolitan pizza catering at your wedding, party or celebration in Leicester & the East Midlands, then check your date directly with the founders.',
   alternates: { canonical: '/quote' },
   openGraph: {
-    title: 'Get a Quote — Pizza Buddies',
-    description: 'Two minutes, five questions, an honest estimate — then the founders personally confirm your date.',
+    title: 'Get a Quote from Pizza Buddies',
+    description: 'Two minutes, five questions, an honest estimate, then the founders personally confirm your date.',
     url: '/quote',
   },
 };
@@ -25,7 +25,7 @@ export default function QuotePage() {
             <hr className="tri-rule" aria-hidden="true" />
             <p className="lede">
               Five questions, two minutes, a realistic number for your budget. Then Priten and
-              Vishant personally check your date — every event is confirmed by the founders,
+              Vishant personally check your date. Every event is confirmed by the founders,
               never by an algorithm.
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function QuotePage() {
             <div>
               <noscript>
                 <p style={{ border: '1px solid var(--it-red)', padding: '16px 20px', marginBottom: '28px' }}>
-                  The estimate builder needs JavaScript. No problem — email{' '}
+                  The estimate builder needs JavaScript. No problem: email{' '}
                   <a href="mailto:info@pizzabuddies.co.uk">info@pizzabuddies.co.uk</a>{' '}
                   with your date, location, guest count and preferred package (Classic from
                   £16pp / Premium from £18pp) and we&rsquo;ll reply with a quote.

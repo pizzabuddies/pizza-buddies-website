@@ -3,16 +3,16 @@
 import { useEffect, useRef, useState } from 'react';
 
 /* ------------------------------------------------------------------
-   Pizza Buddies — estimate builder + availability enquiry
+   Pizza Buddies - estimate builder + availability enquiry
    ------------------------------------------------------------------
    This is an ESTIMATE tool, not a booking system. It ends in a
    lead-capture step; availability is always confirmed personally by
    the founders. Submissions POST to /api/send-quote, which emails
    the enquiry to the business via Resend (see app/api/send-quote/route.ts).
 
-   PRICING — edit these three constants when prices change:            */
+   PRICING - edit these three constants when prices change:            */
 const PRICE_PER_PERSON = { classic: 16, premium: 18 } as const;
-const MINIMUM_HIRE = 900;          // £ — minimum hire, location dependent
+const MINIMUM_HIRE = 900;          // £; minimum hire, depends on location
 const ESTIMATE_HEADROOM = 1.15;    // upper bound of range (+15% for travel/extras)
 
 type Pkg = keyof typeof PRICE_PER_PERSON;
@@ -167,10 +167,10 @@ export default function QuoteTool() {
     return (
       <div className="quote-done">
         <p className="kicker">Enquiry received</p>
-        <h2 tabIndex={-1} ref={headingRef}>Thanks — we&rsquo;ve got your details</h2>
+        <h2 tabIndex={-1} ref={headingRef}>Thanks, we&rsquo;ve got your details</h2>
         <p>
           We&rsquo;ve received your enquiry and will confirm availability shortly. Priten or
-          Vishant will come back to you personally at <strong>{data.email}</strong> — every
+          Vishant will come back to you personally at <strong>{data.email}</strong>. Every
           date is checked by a founder, not an algorithm.
         </p>
         <ul className="est-recap" style={{ borderTop: '1px solid var(--line)', color: 'inherit' }}>
@@ -193,7 +193,7 @@ export default function QuoteTool() {
       </ol>
 
       <form onSubmit={submit} noValidate>
-        {/* ================= STEP 1 — inputs ================= */}
+        {/* ================= STEP 1 - inputs ================= */}
         <fieldset className="qstep" hidden={step !== 1}>
           <h2 tabIndex={-1} ref={step === 1 ? headingRef : undefined}>Tell us about your event</h2>
           <div className="fields">
@@ -201,7 +201,7 @@ export default function QuoteTool() {
               <label htmlFor="event-location">Event location</label>
               <input
                 type="text" id="event-location" required autoComplete="postal-code"
-                placeholder="Postcode or town — e.g. LE2, Market Harborough"
+                placeholder="Postcode or town (e.g. LE2 or Market Harborough)"
                 value={data.location} onChange={set('location')}
                 aria-invalid={errors.location ? true : undefined}
               />
@@ -225,7 +225,7 @@ export default function QuoteTool() {
                 placeholder="e.g. 80" value={data.guests} onChange={set('guests')}
                 aria-invalid={errors.guests ? true : undefined}
               />
-              <p className="hint">A best guess is fine — we&rsquo;ll fine-tune it together.</p>
+              <p className="hint">A best guess is fine. We&rsquo;ll fine-tune it together.</p>
               <p className="err" aria-live="polite">{errors.guests}</p>
             </div>
             <div className={`field${errors.date ? ' error' : ''}`}>
@@ -257,7 +257,7 @@ export default function QuoteTool() {
                   <label htmlFor="pkg-classic">
                     <b>Classic</b>
                     <span className="pkg__price">£16 <small>from, pp</small></span>
-                    <p>The signature experience — our Neapolitan pizzas, hand-stretched and cooked live for your guests.</p>
+                    <p>The signature experience: our Neapolitan pizzas, hand-stretched and cooked live for your guests.</p>
                   </label>
                 </div>
                 <div className="pkg">
@@ -269,7 +269,7 @@ export default function QuoteTool() {
                   <label htmlFor="pkg-premium">
                     <b>Premium</b>
                     <span className="pkg__price">£18 <small>from, pp</small></span>
-                    <p>The full spread — wider menu choice, made for weddings and showpiece events.</p>
+                    <p>The full spread: wider menu choice, made for weddings and showpiece events.</p>
                   </label>
                 </div>
               </div>
@@ -286,14 +286,14 @@ export default function QuoteTool() {
           </div>
         </fieldset>
 
-        {/* ================= STEP 2 — estimate output ================= */}
+        {/* ================= STEP 2 - estimate output ================= */}
         <fieldset className="qstep" hidden={step !== 2}>
           <h2 tabIndex={-1} ref={step === 2 ? headingRef : undefined}>Your estimate</h2>
           <div className="estimate-card" aria-live="polite">
             <p className="kicker">Estimated cost</p>
             <p className="estimate-card__range">{estimateText}</p>
             <p className="estimate-card__note">
-              This is an estimate to help you budget — based on your guest count and package,
+              This is an estimate to help you budget, based on your guest count and package,
               before travel and location are factored in. Every event is confirmed personally
               by Priten and Vishant to make sure we can deliver on your date.
             </p>
@@ -313,17 +313,17 @@ export default function QuoteTool() {
           <div className="qstep__actions">
             <button type="button" className="btn-back" onClick={() => setStep(1)}>← Adjust details</button>
             <button type="button" className="btn btn--lg" onClick={() => setStep(3)}>
-              Looks right — check availability
+              Looks right: check availability
             </button>
           </div>
         </fieldset>
 
-        {/* ================= STEP 3 — lead capture ================= */}
+        {/* ================= STEP 3 - lead capture ================= */}
         <fieldset className="qstep" hidden={step !== 3}>
           <h2 tabIndex={-1} ref={step === 3 ? headingRef : undefined}>Check availability for this date</h2>
           <p style={{ marginBottom: '1.8rem' }}>
             This is where a human takes over. Send us your details and Priten or Vishant will
-            come back to you personally to confirm whether your date is free — nothing is
+            come back to you personally to confirm whether your date is free. Nothing is
             booked automatically.
           </p>
           <div className="fields">
@@ -372,13 +372,13 @@ export default function QuoteTool() {
           </div>
           {sendError && (
             <p className="send-error" role="alert">
-              {sendError} Please try again in a minute — or email us directly at{' '}
+              {sendError} Please try again in a minute, or email us directly at{' '}
               <a href="mailto:info@pizzabuddies.co.uk">info@pizzabuddies.co.uk</a>.
             </p>
           )}
           <p className="smallprint">
-            Your enquiry goes straight to Priten and Vishant at info@pizzabuddies.co.uk —
-            no email app needed, nothing is booked until they confirm with you.
+            Your enquiry goes straight to Priten and Vishant at info@pizzabuddies.co.uk.
+            No email app needed, and nothing is booked until they confirm with you.
           </p>
         </fieldset>
       </form>

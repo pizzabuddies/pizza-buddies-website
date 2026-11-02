@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 /* ============================================================
-   CORPORATE EVENTS — PAGE PARKED (July 2026), NOT DELETED
+   CORPORATE EVENTS - PAGE PARKED (July 2026), NOT DELETED
    ============================================================
    Corporate bookings aren't being actively pursued for now
    (weekday events don't fit around the founders' full-time jobs),
    so this page is switched off. The full page below is kept
-   compiled and ready — do not delete it.
+   compiled and ready - do not delete it.
 
    TO RE-ENABLE THIS PAGE:
    1. Change CORPORATE_PAGE_ENABLED to true (one line, just below).
@@ -19,7 +19,7 @@ import { notFound } from 'next/navigation';
    4. Add the route back into app/sitemap.ts
       (see the commented entry there).
    5. Optionally re-add a corporate panel/CTA on the home page
-      (app/page.tsx — see the "CELEBRATION SPLIT" comment).
+      (app/page.tsx - see the "CELEBRATION SPLIT" comment).
 
    While disabled, /corporate-events returns a 404 but general
    mentions of corporate catering elsewhere on the site remain.
@@ -48,7 +48,7 @@ export default function CorporateEventsPage() {
             <hr className="tri-rule" aria-hidden="true" />
             <p className="lede">
               Live Neapolitan pizza for launches, away-days, summer socials and end-of-quarter
-              thank-yous — delivered with the paperwork in order and zero fuss on the day.
+              thank-yous, delivered with the paperwork in order and zero fuss on the day.
               Fully vegetarian, so one caterer covers the whole floor.
             </p>
             <div className="hero__actions">
@@ -62,13 +62,13 @@ export default function CorporateEventsPage() {
             </p>
           </div>
           <div className="hero__media">
-            {/* IMAGE SLOT: public/assets/img/hero-corporate-event.jpg — replace this .ph div with:
+            {/* IMAGE SLOT: public/assets/img/hero-corporate-event.jpg - replace this .ph div with:
                 <img className="ph-img ph--45" src="/assets/img/hero-corporate-event.jpg"
                      alt="Pizza Buddies serving colleagues at a corporate event" /> */}
             <div
               className="ph ph--45"
               role="img"
-              aria-label="Placeholder — corporate event photo, professional photography coming soon"
+              aria-label="Placeholder, corporate event photo, professional photography coming soon"
               data-label="hero-corporate-event.jpg"
             ></div>
           </div>
@@ -83,7 +83,7 @@ export default function CorporateEventsPage() {
             <h2>A centrepiece, not just catering</h2>
             <p className="lede">
               A buffet gets eaten. A live pizza station gets talked about. Our pizzaiolos
-              stretch, top and fire every pizza in front of your team — the food becomes the
+              stretch, top and fire every pizza in front of your team, so the food becomes the
               event.
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function CorporateEventsPage() {
               <span className="feat__num" aria-hidden="true">№ 01</span>
               <h3>Every diet, one menu</h3>
               <p>
-                The whole menu is vegetarian, with vegan and gluten-free options available —
+                The whole menu is vegetarian, with vegan and gluten-free options available,
                 which makes dietary logistics for a mixed office refreshingly simple.
               </p>
             </article>
@@ -108,7 +108,7 @@ export default function CorporateEventsPage() {
               <span className="feat__num" aria-hidden="true">№ 03</span>
               <h3>Minimal footprint</h3>
               <p>
-                We need a 3m × 3m pitch and a power supply — a car park, courtyard or loading
+                We need a 3m × 3m pitch and a power supply. A car park, courtyard or loading
                 bay is plenty. We arrive, set up, serve and leave the site as we found it.
               </p>
             </article>
@@ -131,19 +131,19 @@ export default function CorporateEventsPage() {
               </div>
               <p style={{ marginTop: '1.6rem' }}>
                 Compliance documentation is available for your facilities or events team on
-                request — just ask when you enquire.
+                request, just ask when you enquire.
               </p>
               {/* CLIENT LOGO SLOT: when past corporate clients confirm permission, add an
                   "As served at" logo strip here. Do not add logos that haven't been supplied. */}
             </div>
             <div className="reveal">
-              {/* IMAGE SLOT: public/assets/img/corporate-setup.jpg — replace this .ph div with:
+              {/* IMAGE SLOT: public/assets/img/corporate-setup.jpg - replace this .ph div with:
                   <img className="ph-img ph--43" src="/assets/img/corporate-setup.jpg"
                        alt="Pizza Buddies gazebo setup at a workplace event" loading="lazy" /> */}
               <div
                 className="ph ph--43"
                 role="img"
-                aria-label="Placeholder — our setup at a workplace event"
+                aria-label="Placeholder, our setup at a workplace event"
                 data-label="corporate-setup.jpg"
               ></div>
             </div>
@@ -161,7 +161,7 @@ export default function CorporateEventsPage() {
           <ol className="steps">
             <li className="step reveal">
               <h3>Send your date</h3>
-              <p>Use the estimate builder — two minutes, and you&rsquo;ll have a budget figure to circulate internally.</p>
+              <p>Use the estimate builder. It takes two minutes, and you&rsquo;ll have a budget figure to circulate internally.</p>
             </li>
             <li className="step reveal">
               <h3>Personal confirmation</h3>
@@ -173,7 +173,7 @@ export default function CorporateEventsPage() {
             </li>
           </ol>
           <p className="lede reveal" style={{ marginTop: 'clamp(36px, 6vw, 56px)', color: '#d9d9d9' }}>
-            As we grow, a bespoke fully-fitted trailer is on its way — built for all-weather
+            As we grow, a bespoke fully-fitted trailer is on its way, built for all-weather
             service and larger events. 2026 and beyond looks bigger.
           </p>
         </div>
@@ -191,7 +191,7 @@ export default function CorporateEventsPage() {
               <summary>What do you need from our site?</summary>
               <p>
                 A 3m × 3m space for our gazebo setup and access to a power supply. Car parks,
-                courtyards and outdoor areas all work well — tell us about the site in your
+                courtyards and outdoor areas all work well. Tell us about the site in your
                 enquiry and we&rsquo;ll flag anything early.
               </p>
             </details>
@@ -199,7 +199,7 @@ export default function CorporateEventsPage() {
               <summary>Can you cover vegan and gluten-free colleagues?</summary>
               <p>
                 Yes. The entire menu is vegetarian, and vegan and gluten-free options are
-                available — let us know numbers when you book and everyone gets fed from the
+                available. Let us know numbers when you book and everyone gets fed from the
                 same oven.
               </p>
             </details>

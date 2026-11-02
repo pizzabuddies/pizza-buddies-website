@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Photo from '@/components/Photo';
 
 export const metadata: Metadata = {
-  title: 'Our Story — Priten, Vishant & a Garden Pizza Oven',
+  title: 'Our Story: Priten, Vishant & a Garden Pizza Oven',
   description:
     "Pizza Buddies began with a friend's garden pizza oven in 2021. Now Priten and Vishant bring fully vegetarian Neapolitan pizza, cooked live, to events across Leicester and the East Midlands.",
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'Our Story — Pizza Buddies',
+    title: 'Our Story at Pizza Buddies',
     description:
       'Two buddies, one garden pizza oven, and five seasons of live Neapolitan pizza across the East Midlands.',
     url: '/about',
@@ -32,15 +33,15 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="hero__media">
-            {/* IMAGE SLOT: public/assets/img/about-founders.jpg — replace this .ph div with:
-                <img className="ph-img ph--45" src="/assets/img/about-founders.jpg"
-                     alt="Priten and Vishant, founders of Pizza Buddies, at the oven" /> */}
-            <div
-              className="ph ph--45"
-              role="img"
-              aria-label="Placeholder — Priten and Vishant at the oven, professional photography coming soon"
-              data-label="about-founders.jpg"
-            ></div>
+            {/* PHOTO: reuses hero-live-cooking.jpg until a dedicated about-founders.jpg exists.
+                To switch, drop public/assets/img/about-founders.jpg in and change src below. */}
+            <Photo
+              src="/assets/img/hero-live-cooking.jpg"
+              alt="Two Pizza Buddies team members in black aprons behind the stall, with fresh pizza bases lined up on the counter"
+              aspect="ph--45"
+              sizes="(min-width: 900px) 500px, 100vw"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -55,19 +56,19 @@ export default function AboutPage() {
             </div>
             <div className="reveal">
               <p className="lede">
-                The idea was simple and it hasn&rsquo;t changed: proper Neapolitan pizza —
-                48-hour dough, ingredients from Italy and local producers, cooked in minutes in
-                Gozney ovens — made right in front of the people eating it.
+                The idea was simple and it hasn&rsquo;t changed: proper Neapolitan pizza, made
+                right in front of the people eating it. 48-hour dough, ingredients from Italy
+                and local producers, cooked in minutes in Gozney ovens.
               </p>
               <p style={{ marginTop: '1.2rem' }}>
                 What has changed is everything around it. Now in our fifth year, we&rsquo;ve
                 served weddings, mehndi nights, engagements, birthdays, corporate floors and
-                festival fields across Leicestershire and the East Midlands — all of it fully
+                festival fields across Leicestershire and the East Midlands. All of it fully
                 vegetarian, all of it cooked live.
               </p>
               <p style={{ marginTop: '1.2rem' }}>
                 And because it&rsquo;s just the two of us at the helm, every single booking is
-                confirmed personally. When you enquire, you&rsquo;re talking to a founder — not
+                confirmed personally. When you enquire, you&rsquo;re talking to a founder, not
                 a call centre.
               </p>
             </div>
@@ -86,14 +87,14 @@ export default function AboutPage() {
             <div className="reveal">
               <div className="badges">
                 {/* The FSA rating is our official business rating; Level 2 Food Hygiene
-                    is a personal qualification — different things, both worth showing. */}
+                    is a personal qualification - different things, both worth showing. */}
                 <span className="badge">Food Hygiene Rating <b className="rating">5</b></span>
                 <span className="badge">NCASS Registered</span>
                 <span className="badge">Level 2 Food Hygiene</span>
               </div>
               <p style={{ marginTop: '1.2rem', fontSize: '0.98rem' }}>
                 We hold the top Food Hygiene Rating of 5 under the Food Standards Agency&rsquo;s
-                Food Hygiene Rating Scheme — our official business rating — alongside NCASS
+                Food Hygiene Rating Scheme, our official business rating, alongside NCASS
                 registration and our Level 2 Food Hygiene certification.
               </p>
             </div>
@@ -120,14 +121,14 @@ export default function AboutPage() {
               <time>Since then</time>
               <p>
                 Weddings, mehndi parties, engagements, birthdays, corporate events and food
-                festivals across the East Midlands — NCASS-registered, Level 2 Food Hygiene
-                certified and rated 5 for food hygiene along the way.
+                festivals across the East Midlands, picking up NCASS registration, Level 2 Food
+                Hygiene certification and a Food Hygiene Rating of 5 along the way.
               </p>
             </li>
             <li className="tl-item reveal">
               <time>2026 &amp; beyond</time>
               <p>
-                As we grow, a bespoke fully-fitted pizza trailer is on its way — replacing the
+                As we grow, a bespoke fully-fitted pizza trailer is on its way to replace the
                 gazebo, ready for all weathers and even bigger events. Watch this space.
               </p>
             </li>
@@ -144,17 +145,25 @@ export default function AboutPage() {
           </div>
           <div className="founders">
             <figure className="founder reveal">
-              {/* IMAGE SLOT: public/assets/img/founder-priten.jpg — replace this .ph div with:
-                  <img className="ph-img ph--34" src="/assets/img/founder-priten.jpg"
-                       alt="Priten, co-founder of Pizza Buddies" loading="lazy" /> */}
-              <div className="ph ph--34" role="img" aria-label="Placeholder — portrait of Priten" data-label="founder-priten.jpg"></div>
+              {/* PHOTO: public/assets/img/founder-priten.jpg (swap the file to change it) */}
+              <Photo
+                src="/assets/img/founder-priten.jpg"
+                alt="Priten, co-founder of Pizza Buddies, smiling in a Pizza Buddies cap and apron and holding a freshly baked Margherita pizza"
+                aspect="ph--34"
+                position="center 15%"
+                sizes="(min-width: 720px) 560px, 100vw"
+              />
               <figcaption><b>Priten</b><span>Co-founder</span></figcaption>
             </figure>
             <figure className="founder reveal">
-              {/* IMAGE SLOT: public/assets/img/founder-vishant.jpg — replace this .ph div with:
-                  <img className="ph-img ph--34" src="/assets/img/founder-vishant.jpg"
-                       alt="Vishant, co-founder of Pizza Buddies" loading="lazy" /> */}
-              <div className="ph ph--34" role="img" aria-label="Placeholder — portrait of Vishant" data-label="founder-vishant.jpg"></div>
+              {/* PHOTO: public/assets/img/founder-vishant.jpg (swap the file to change it) */}
+              <Photo
+                src="/assets/img/founder-vishant.jpg"
+                alt="Vishant, co-founder of Pizza Buddies, smiling with his arms crossed in front of two glowing Gozney pizza ovens"
+                aspect="ph--34"
+                position="center 30%"
+                sizes="(min-width: 720px) 560px, 100vw"
+              />
               <figcaption><b>Vishant</b><span>Co-founder</span></figcaption>
             </figure>
           </div>
@@ -182,7 +191,7 @@ export default function AboutPage() {
               <h3>Authenticity</h3>
               <p>
                 Neapolitan method, Gozney fire, pizzas cooked in minutes. And a fully
-                vegetarian menu — because that&rsquo;s who we are, not a concession.
+                vegetarian menu, because that&rsquo;s who we are, not a concession.
               </p>
             </article>
             <article className="feat reveal">

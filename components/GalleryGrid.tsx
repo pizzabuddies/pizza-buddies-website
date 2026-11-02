@@ -2,6 +2,11 @@
 
 import { useState } from 'react';
 
+/* NOT CURRENTLY USED. The gallery page now shows the live Instagram feed
+   (components/InstagramFeed.tsx). This is the earlier filterable grid of your
+   own photos, kept in case you want a curated gallery alongside Instagram.
+   To use it again, import it in app/gallery/page.tsx and add real photos. */
+
 /* Gallery items. To swap in real photography, replace a `ph` entry's div with:
    <img className="ph-img" src="/assets/img/gallery/FILE" alt="…" loading="lazy" />
    (see the IMAGE SLOT list in public/assets/img/SHOT-LIST.md) */
@@ -18,18 +23,18 @@ const FILTERS: { key: Cat | 'all'; label: string }[] = [
 ];
 
 const ITEMS: { file: string; cat: Cat; caption: string; aria: string; span?: 'tall' | 'wide' }[] = [
-  { file: 'wedding-01.jpg', cat: 'wedding', caption: 'Wedding', aria: 'Placeholder — wedding photo', span: 'tall' },
-  { file: 'corporate-01.jpg', cat: 'corporate', caption: 'Corporate', aria: 'Placeholder — corporate event photo' },
-  { file: 'mehndi-01.jpg', cat: 'mehndi', caption: 'Mehndi', aria: 'Placeholder — mehndi night photo' },
-  { file: 'festival-01.jpg', cat: 'festival', caption: 'Festival', aria: 'Placeholder — food festival photo', span: 'wide' },
-  { file: 'birthday-01.jpg', cat: 'birthday', caption: 'Birthday', aria: 'Placeholder — birthday party photo' },
-  { file: 'wedding-02.jpg', cat: 'wedding', caption: 'Wedding', aria: 'Placeholder — wedding photo' },
-  { file: 'mehndi-02.jpg', cat: 'mehndi', caption: 'Engagement', aria: 'Placeholder — engagement party photo', span: 'tall' },
-  { file: 'corporate-02.jpg', cat: 'corporate', caption: 'Corporate', aria: 'Placeholder — corporate event photo' },
-  { file: 'festival-02.jpg', cat: 'festival', caption: 'Festival', aria: 'Placeholder — food festival photo' },
-  { file: 'birthday-02.jpg', cat: 'birthday', caption: 'Birthday', aria: 'Placeholder — garden party photo' },
-  { file: 'wedding-03.jpg', cat: 'wedding', caption: 'Wedding', aria: 'Placeholder — wedding photo', span: 'wide' },
-  { file: 'mehndi-03.jpg', cat: 'mehndi', caption: 'Mehndi', aria: 'Placeholder — mehndi night photo' },
+  { file: 'wedding-01.jpg', cat: 'wedding', caption: 'Wedding', aria: 'Placeholder, wedding photo', span: 'tall' },
+  { file: 'corporate-01.jpg', cat: 'corporate', caption: 'Corporate', aria: 'Placeholder, corporate event photo' },
+  { file: 'mehndi-01.jpg', cat: 'mehndi', caption: 'Mehndi', aria: 'Placeholder, mehndi night photo' },
+  { file: 'festival-01.jpg', cat: 'festival', caption: 'Festival', aria: 'Placeholder, food festival photo', span: 'wide' },
+  { file: 'birthday-01.jpg', cat: 'birthday', caption: 'Birthday', aria: 'Placeholder, birthday party photo' },
+  { file: 'wedding-02.jpg', cat: 'wedding', caption: 'Wedding', aria: 'Placeholder, wedding photo' },
+  { file: 'mehndi-02.jpg', cat: 'mehndi', caption: 'Engagement', aria: 'Placeholder, engagement party photo', span: 'tall' },
+  { file: 'corporate-02.jpg', cat: 'corporate', caption: 'Corporate', aria: 'Placeholder, corporate event photo' },
+  { file: 'festival-02.jpg', cat: 'festival', caption: 'Festival', aria: 'Placeholder, food festival photo' },
+  { file: 'birthday-02.jpg', cat: 'birthday', caption: 'Birthday', aria: 'Placeholder, garden party photo' },
+  { file: 'wedding-03.jpg', cat: 'wedding', caption: 'Wedding', aria: 'Placeholder, wedding photo', span: 'wide' },
+  { file: 'mehndi-03.jpg', cat: 'mehndi', caption: 'Mehndi', aria: 'Placeholder, mehndi night photo' },
 ];
 
 export default function GalleryGrid() {

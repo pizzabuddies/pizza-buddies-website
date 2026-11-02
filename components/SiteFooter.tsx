@@ -10,7 +10,7 @@ export default function SiteFooter() {
       <div className="container">
         <div className="site-foot__grid">
           <div>
-            <Link href="/" aria-label="Pizza Buddies — home">
+            <Link href="/" aria-label="Pizza Buddies, home">
               <Image
                 className="site-foot__roundel"
                 src={logoRoundel}
@@ -26,7 +26,7 @@ export default function SiteFooter() {
           <nav aria-label="Footer">
             <h3>Explore</h3>
             <ul>
-              {/* Corporate Events link removed while that page is disabled —
+              {/* Corporate Events link removed while that page is disabled -
                   see app/corporate-events/page.tsx to re-enable, then restore:
                   <li><Link href="/corporate-events">Corporate Events</Link></li> */}
               <li><Link href="/private-events">Private Events</Link></li>
@@ -50,7 +50,7 @@ export default function SiteFooter() {
           <div>
             <h3>Good to know</h3>
             <div className="badges">
-              {/* FSA Food Hygiene Rating (business rating) — distinct from the
+              {/* FSA Food Hygiene Rating (business rating) - distinct from the
                   Level 2 Food Hygiene certificate (personal qualification) */}
               <span className="badge">Food Hygiene Rating <b className="rating">5</b></span>
               <span className="badge">NCASS Registered</span>

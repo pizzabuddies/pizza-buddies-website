@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <section className="sec notfound">
       <div className="container">
-        <p className="kicker">404 — page not found</p>
+        <p className="kicker">404: page not found</p>
         <h1>This slice doesn&rsquo;t exist</h1>
         <hr className="tri-rule tri-rule--center" aria-hidden="true" />
         <p className="lede" style={{ marginInline: 'auto', maxWidth: '46ch' }}>

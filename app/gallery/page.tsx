@@ -1,19 +1,22 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import GalleryGrid from '@/components/GalleryGrid';
+import InstagramFeed from '@/components/InstagramFeed';
 
 export const metadata: Metadata = {
-  title: 'Gallery — Live Pizza Catering in Action',
+  title: 'Gallery: Live Pizza Catering in Action',
   description:
-    'Pizza Buddies at weddings, mehndi nights, birthdays and festivals across Leicestershire and the East Midlands. See the live Neapolitan cooking experience.',
+    'The latest photos and videos from Pizza Buddies events across Leicestershire and the East Midlands, live from our Instagram. See the live Neapolitan cooking experience.',
   alternates: { canonical: '/gallery' },
   openGraph: {
-    title: 'Gallery — Pizza Buddies in Action',
-    description: 'Weddings, mehndi nights, birthdays and festivals across the East Midlands.',
+    title: 'Gallery: Pizza Buddies in Action',
+    description: 'The latest from our events across the East Midlands, live from Instagram.',
     url: '/gallery',
   },
 };
 
+/* The gallery is Instagram's embed of @pizzabuddiesuk (components/InstagramFeed.tsx).
+   The earlier filterable photo grid is kept, unused, in components/GalleryGrid.tsx
+   in case you want a curated gallery of your own photos later. */
 export default function GalleryPage() {
   return (
     <>
@@ -26,24 +29,24 @@ export default function GalleryPage() {
             <hr className="tri-rule" aria-hidden="true" />
             <p className="lede">
               Weddings, mehndi nights, birthdays and festival fields across the East Midlands.
-              Professional photography from our shoot is on its way — these frames are reserved
-              for it. Meanwhile, the day-to-day lives on Instagram at{' '}
+              Our gallery is our Instagram, so you always see the latest. Follow{' '}
               <a
                 href="https://www.instagram.com/pizzabuddiesuk"
                 rel="noopener"
                 style={{ textUnderlineOffset: '4px' }}
               >
                 @pizzabuddiesuk
-              </a>.
+              </a>{' '}
+              to see more.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ============ GRID ============ */}
+      {/* ============ INSTAGRAM FEED ============ */}
       <section className="sec">
         <div className="container">
-          <GalleryGrid />
+          <InstagramFeed />
         </div>
       </section>
 

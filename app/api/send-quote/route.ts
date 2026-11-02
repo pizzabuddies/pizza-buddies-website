@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 /* ============================================================
-   /api/send-quote — sends quote-tool enquiries to the business
+   /api/send-quote - sends quote-tool enquiries to the business
    via Resend (https://resend.com), no visitor email app involved.
 
    ─── SETUP (one-time, ~10 minutes) ──────────────────────────
@@ -16,7 +16,7 @@ import { Resend } from 'resend';
         → add RESEND_API_KEY = re_xxxxxxxx (all environments), then redeploy.
       • Locally: copy .env.example to .env.local and paste the key there.
       Never paste the key into this file.
-   4. RECOMMENDED — verify your domain so enquiries come from your
+   4. RECOMMENDED - verify your domain so enquiries come from your
       own address: Resend → Domains → Add Domain → pizzabuddies.co.uk,
       then add the DNS records Resend shows you at your domain registrar.
       Once verified, change FROM_EMAIL below to something like:
@@ -85,7 +85,7 @@ export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     // The env var hasn't been added yet (see SETUP notes at the top of this file)
-    console.error('[send-quote] RESEND_API_KEY is not set — add it in Vercel → Settings → Environment Variables.');
+    console.error('[send-quote] RESEND_API_KEY is not set. Add it in Vercel > Settings > Environment Variables.');
     return NextResponse.json(
       { error: 'Our enquiry form isn’t quite ready yet.' },
       { status: 500 }
@@ -93,7 +93,7 @@ export async function POST(request: Request) {
   }
 
   const summaryText = [
-    'New availability enquiry — pizzabuddies.co.uk',
+    'New availability enquiry from pizzabuddies.co.uk',
     '',
     `Name:     ${body.name}`,
     `Email:    ${body.email}`,
@@ -114,7 +114,7 @@ export async function POST(request: Request) {
     from: FROM_EMAIL,
     to: [TO_EMAIL],
     replyTo: String(body.email), // reply straight to the customer from your inbox
-    subject: `Availability check — ${formatDate(String(body.date))} — ${body.eventType}, ${guests} guests`,
+    subject: `Availability check: ${formatDate(String(body.date))} | ${body.eventType}, ${guests} guests`,
     text: summaryText,
   });
 

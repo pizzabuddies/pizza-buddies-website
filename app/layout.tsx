@@ -26,7 +26,7 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   metadataBase: new URL('https://pizzabuddies.co.uk'),
   title: {
-    default: 'Pizza Buddies — Neapolitan Pizza Catering in Leicester & the East Midlands',
+    default: 'Pizza Buddies | Neapolitan Pizza Catering in Leicester & the East Midlands',
     template: '%s | Pizza Buddies',
   },
   description:
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: 'Pizza Buddies',
     locale: 'en_GB',
     type: 'website',
-    /* IMAGE SLOT: public/assets/img/og-cover.jpg — regenerate with real photography when available */
+    /* IMAGE SLOT: public/assets/img/og-cover.jpg - regenerate with real photography when available */
     images: ['/assets/img/og-cover.jpg'],
   },
   twitter: { card: 'summary_large_image' },

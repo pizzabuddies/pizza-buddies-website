@@ -1,57 +1,35 @@
-# Pizza Buddies — photography shot list & image slots
+# Pizza Buddies: photo guide
 
-Every image slot on the site is a named placeholder waiting for these files.
-Shoot in colour if you like — **the site converts all photos to black & white
-automatically** (via the `ph-img` CSS class), so nothing needs editing first.
+All site photos live in this folder (`public/assets/img/`). To change a photo,
+replace the file with a new one **using the same file name** and redeploy. No
+code changes needed. Colour photos are fine: the site converts every photo to
+black & white automatically (the `ph-img` CSS class).
 
-Aim for sharp, high-contrast shots with real moments in them: hands in dough,
-flames in the oven, guests mid-laugh. Phone photos work until the pro shoot lands.
+Keep each file under ~300KB (resize to about 1800px on the long edge) so the
+site stays fast. Next.js also optimises them for each visitor's screen.
 
-## Hero images (most important — shoot these first)
+## Photos currently on the site
 
-| File | Used on | Orientation | What to shoot |
+| File | Where it appears | Shape it is cropped to | Notes |
 |---|---|---|---|
-| `hero-live-cooking.jpg` | Home | Portrait 4:5 | Pizzaiolo hand-stretching dough, guests visible behind. This is the site's first impression. Could also be a short video loop. |
-| `hero-private-event.jpg` | Private Events | Portrait 4:5 | Guests gathered around the oven at a celebration, energy high |
-| `about-founders.jpg` | Our Story | Portrait 4:5 | Priten & Vishant together at the oven |
-| `hero-corporate-event.jpg` | Corporate (currently parked) | Portrait 4:5 | Serving a smartly-dressed crowd; setup looking tidy |
+| `hero-live-cooking.jpg` | Home hero, Our Story hero | Portrait 4:5 | Real photo: the team at the gazebo. |
+| `hero-private-event.jpg` | Private Events hero | Portrait 4:5 | Stand-in image. Replace with a real celebration. |
+| `split-private.jpg` | Home, "Weddings" panel | Fills the panel | Stand-in image. A real wedding service shot would be ideal. |
+| `split-celebrations.jpg` | Home, "Mehndi, engagements & birthdays" panel | Fills the panel | Real photo: the gazebo set up in a garden. |
+| `occasion-wedding.jpg` | Private Events, Weddings | Landscape 4:3 | Stand-in image. |
+| `occasion-mehndi.jpg` | Private Events, Mehndi & engagements | Landscape 4:3 | Stand-in image. A colourful mehndi night would suit this. |
+| `occasion-birthday.jpg` | Private Events, Birthdays | Landscape 4:3 | Stand-in image. |
+| `founder-priten.jpg` | Our Story, founders | Portrait 3:4 | Real photo. |
+| `founder-vishant.jpg` | Our Story, founders | Portrait 3:4 | Real photo. |
+| `og-cover.jpg` | Link preview when the site is shared (WhatsApp, Facebook) | 1200 x 630 | Currently the logo on black. A strong B&W photo plus the logo would work well. |
 
-## Section images
+## Not yet supplied
 
-| File | Used on | Orientation | What to shoot |
-|---|---|---|---|
-| `split-private.jpg` | Home (Weddings panel) | Any (fills panel) | Wedding/party moment |
-| `split-celebrations.jpg` | Home (Mehndi & celebrations panel) | Any (fills panel) | Mehndi/engagement/birthday moment |
-| `occasion-wedding.jpg` | Private Events | Landscape 4:3 | Wedding service |
-| `occasion-mehndi.jpg` | Private Events | Landscape 4:3 | Mehndi night — colour & movement (goes B&W beautifully) |
-| `occasion-birthday.jpg` | Private Events | Landscape 4:3 | Garden party / birthday |
-| `founder-priten.jpg` | Our Story | Portrait 3:4 | Priten portrait, at work |
-| `founder-vishant.jpg` | Our Story | Portrait 3:4 | Vishant portrait, at work |
-| `corporate-setup.jpg` | Corporate (currently parked) | Landscape 4:3 | Full setup wide shot |
+- `about-founders.jpg` (portrait 4:5, Priten and Vishant together at the oven):
+  the Our Story hero currently reuses `hero-live-cooking.jpg`. To use a
+  dedicated photo, add this file and change the `src` in `app/about/page.tsx`.
 
-## Gallery (`public/assets/img/gallery/`)
+## The gallery
 
-Three per category is the current grid; add more anytime (the list lives in
-`components/GalleryGrid.tsx`).
-
-- `wedding-01.jpg`, `wedding-02.jpg`, `wedding-03.jpg`
-- `mehndi-01.jpg`, `mehndi-02.jpg`, `mehndi-03.jpg`
-- `birthday-01.jpg`, `birthday-02.jpg`
-- `corporate-01.jpg`, `corporate-02.jpg`
-- `festival-01.jpg`, `festival-02.jpg`
-
-## Social sharing
-
-`og-cover.jpg` (1200 × 630) already exists here — currently generated from the
-logo roundel on black. Replace it with logo + one strong B&W photo once the
-shoot lands.
-
-## How to swap an image in
-
-1. Drop the file into `public/assets/img/` (or `public/assets/img/gallery/`).
-2. Search the code for the matching `IMAGE SLOT` comment (they live in the
-   `app/` pages and `components/GalleryGrid.tsx`).
-3. Replace the `<div className="ph" …>` below the comment with the `<img>` tag
-   shown in that comment.
-
-Keep files under ~300KB each (resize to max 1600px wide) so the site stays fast.
+The Gallery page shows the live Instagram feed for @pizzabuddiesuk, so there
+are no gallery photos to upload here. It updates by itself whenever you post.

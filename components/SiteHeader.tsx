@@ -45,7 +45,7 @@ export default function SiteHeader() {
     <>
       <header className="site-head">
         <div className="site-head__inner">
-          <Link className="logo" href="/" aria-label="Pizza Buddies — home">
+          <Link className="logo" href="/" aria-label="Pizza Buddies, home">
             <Image className="logo__icon" src={logoIcon} alt="" priority sizes="44px" />
             <span className="logo__text">
               <span className="logo__word">Pizza Buddies</span>

@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Menu — Classic & Premium Packages',
+  title: 'Menu: Classic & Premium Packages',
   description:
     'Our fully vegetarian Neapolitan menu: 48-hour dough, seven pizzas from Margherita to Fake-a-roni, dessert pizzas and sides. Classic from £16pp, Premium from £18pp. Vegan and gluten-free options available.',
   alternates: { canonical: '/menu' },
   openGraph: {
-    title: 'The Pizza Buddies Menu — Fully Vegetarian Neapolitan',
+    title: 'The Pizza Buddies Menu: Fully Vegetarian Neapolitan',
     description: 'Seven pizzas, five dessert pizzas, zero meat. Classic from £16pp, Premium from £18pp.',
     url: '/menu',
   },
@@ -21,8 +21,8 @@ const STARTERS: MenuItem[] = [
 ];
 
 const PIZZAS: MenuItem[] = [
-  { name: 'Margherita', desc: 'The classic every Neapolitan menu is judged on — tomato, mozzarella, basil.', tags: ['V'] },
-  { name: 'Marinara', desc: 'The Neapolitan original — tomato, garlic, oregano. Simplicity, at full temperature.', tags: ['V'] },
+  { name: 'Margherita', desc: 'The classic every Neapolitan menu is judged on: tomato, mozzarella, basil.', tags: ['V'] },
+  { name: 'Marinara', desc: 'The Neapolitan original: tomato, garlic, oregano. Simplicity, at full temperature.', tags: ['V'] },
   { name: 'Vegetarian', desc: 'Peppers, sweetcorn, black olives, red onion.', tags: ['V'] },
   { name: 'Spicy', desc: 'Green and red chillies, for the end of the table that always asks for hotter.', tags: ['V'] },
   { name: 'Greek', desc: 'Feta, spinach, black olives, caramelised onion.', tags: ['V'] },
@@ -32,7 +32,7 @@ const PIZZAS: MenuItem[] = [
 
 const DESSERTS: MenuItem[] = [
   { name: 'Nutella & Strawberries', desc: 'The crowd-pleaser.', tags: ['V'] },
-  { name: 'Nutella & Chillies', desc: 'Sweet heat. Trust us — then tell everyone.', tags: ['V'] },
+  { name: 'Nutella & Chillies', desc: 'Sweet heat. Trust us, then tell everyone.', tags: ['V'] },
   { name: 'Biscoff', desc: 'Caramelised biscuit, warm dough. Dangerous combination.', tags: ['V'] },
   { name: 'Pistachio', desc: 'For the sophisticated end of the dessert queue.', tags: ['V'] },
   { name: 'Lemon', desc: 'Bright, sharp, and lighter than it has any right to be.', tags: ['V'] },
@@ -86,7 +86,7 @@ export default function MenuPage() {
             <p className="lede">
               Premium ingredients from Italy and local producers, hand-stretched and fired in
               Gozney ovens at your event. Vegan and gluten-free options are available across
-              the menu — just tell us when you book.
+              the menu. Just tell us when you book.
             </p>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function MenuPage() {
               <p className="kicker" style={{ marginBottom: 0 }}>Classic</p>
               <span className="tier__price">£16 <small>from, per person</small></span>
               <p>
-                The signature Pizza Buddies experience — our Neapolitan pizzas, hand-stretched
+                The signature Pizza Buddies experience: our Neapolitan pizzas, hand-stretched
                 and cooked live, served one after another.
               </p>
               <ul>
@@ -124,7 +124,7 @@ export default function MenuPage() {
               <p className="kicker" style={{ marginBottom: 0 }}>Premium</p>
               <span className="tier__price">£18 <small>from, per person</small></span>
               <p>
-                The full spread — wider choice across the menu, built for weddings, mehndi
+                The full spread: wider choice across the menu, built for weddings, mehndi
                 nights and showpiece events.
               </p>
               <ul>
@@ -151,7 +151,7 @@ export default function MenuPage() {
             <p>
               <span className="tag">V</span> Everything on this menu is vegetarian&nbsp;&nbsp;
               <span className="tag tag--ve">VE</span> Vegan &nbsp;·&nbsp; Vegan and gluten-free
-              options are available across the menu — tell us when you book.
+              options are available across the menu, so tell us when you book.
             </p>
           </div>
 

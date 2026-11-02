@@ -1,7 +1,7 @@
 /* ============================================================
-   PIZZA BUDDIES — site stylesheet (Next.js port)
+   PIZZA BUDDIES - site stylesheet (Next.js port)
    Palette: strict black & white. Italian tricolour used ONLY
-   as thin accent rules / underlines — never as a background.
+   as thin accent rules / underlines - never as a background.
    Type: Anton (display caps) · Oswald (labels/nav) · Source Serif 4 (body)
    Fonts are loaded via next/font in app/layout.tsx, which sets the
    --font-anton / --font-oswald / --font-source-serif variables.
@@ -29,7 +29,7 @@ a { color: inherit; }
   --line: #e2e0da;           /* hairlines on light */
   --line-dark: #2a2a2a;      /* hairlines on dark */
 
-  /* Italian tricolour — accents only */
+  /* Italian tricolour - accents only */
   --it-green: #008c45;
   --it-red: #cd212a;
 
@@ -115,7 +115,7 @@ p { max-width: 62ch; }
   content: ""; width: 26px; height: 1px; background: currentColor; flex: none;
 }
 
-/* Thin tricolour rule — the ONLY sanctioned colour moment */
+/* Thin tricolour rule - the ONLY sanctioned colour moment */
 .tri-rule {
   display: block; width: 72px; height: 3px; border: 0; margin: 1.4rem 0;
   background: linear-gradient(90deg,
@@ -289,7 +289,14 @@ body.nav-open { overflow: hidden; }
   max-width: 85%; text-align: center;
 }
 
-/* aspect modifiers (apply to .ph or .ph-img) */
+/* Real photograph wrapper (components/Photo.tsx). Same sizing hooks as .ph */
+.photo { position: relative; overflow: hidden; background: #101010; }
+.photo--fill { position: absolute; inset: 0; }
+.hero__media .photo { height: 100%; }
+.choice:hover .photo--fill { transform: scale(1.03); }
+.choice .photo--fill { transition: transform 0.5s ease; }
+
+/* aspect modifiers (apply to .ph, .photo or .ph-img) */
 .ph--11  { aspect-ratio: 1 / 1; }
 .ph--43  { aspect-ratio: 4 / 3; }
 .ph--34  { aspect-ratio: 3 / 4; }
@@ -297,7 +304,7 @@ body.nav-open { overflow: hidden; }
 .ph--45  { aspect-ratio: 4 / 5; }
 .ph--21  { aspect-ratio: 2 / 1; }
 
-/* Real photography drops in with this class — auto B&W/high-contrast */
+/* Real photography drops in with this class - auto B&W/high-contrast */
 .ph-img {
   width: 100%; height: 100%; object-fit: cover;
   filter: grayscale(1) contrast(1.08) brightness(0.96);
@@ -440,8 +447,8 @@ body.nav-open { overflow: hidden; }
 }
 .choice__body {
   position: relative; z-index: 2; padding: clamp(24px, 4vw, 44px);
-  background: linear-gradient(0deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.55) 60%, transparent 100%);
-  padding-top: 90px;
+  background: linear-gradient(0deg, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.82) 60%, transparent 100%);
+  padding-top: 130px;
 }
 .choice__body .kicker { margin-bottom: 0.6rem; color: var(--grey-light); }
 .choice h3 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
@@ -505,7 +512,7 @@ body.nav-open { overflow: hidden; }
 .tier li {
   font-size: 0.96rem; padding-left: 22px; position: relative;
 }
-.tier li::before { content: "—"; position: absolute; left: 0; opacity: 0.5; }
+.tier li::before { content: "-"; position: absolute; left: 0; opacity: 0.5; }
 .tier .btn { margin-top: 1.8rem; }
 
 /* ============================================================
@@ -539,8 +546,30 @@ body.nav-open { overflow: hidden; }
 }
 .gitem[hidden] { display: none; }
 
+/* Instagram feed (components/InstagramFeed.tsx) */
+.insta { max-width: 780px; margin-inline: auto; }
+/* Instagram's profile embed shows a header and two rows of three square posts.
+   Height = about 175px for the header and breathing room, plus two thirds of
+   the frame width for the two rows. */
+.insta__frame {
+  display: block; width: 100%;
+  height: calc(175px + 2 * (min(100vw - 2 * var(--pad), 780px) / 3));
+  border: 1px solid var(--black); background: var(--white);
+}
+.insta__gate {
+  background: var(--black); color: var(--white);
+  padding: clamp(32px, 6vw, 64px); text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+}
+.insta__gate h2 { font-size: clamp(1.8rem, 4.4vw, 2.8rem); margin-bottom: 1rem; }
+.insta__gate p { margin-inline: auto; color: #d9d9d9; font-size: 1rem; }
+.insta__gate .kicker { color: var(--grey-light); }
+.insta__gate .hero__actions { justify-content: center; }
+.insta__foot { margin: 14px auto 0; font-size: 0.9rem; color: var(--grey); text-align: center; }
+.insta__foot a { text-underline-offset: 3px; }
+
 /* ============================================================
-   ABOUT — timeline & founders
+   ABOUT - timeline & founders
    ============================================================ */
 .timeline { display: grid; gap: 0; }
 .tl-item {
@@ -759,7 +788,7 @@ body.nav-open { overflow: hidden; }
   content: ""; width: 7px; height: 7px; border-radius: 50%;
   background: currentColor; flex: none;
 }
-/* FSA hygiene rating — the "5" gets a touch more weight */
+/* FSA hygiene rating - the "5" gets a touch more weight */
 .badge .rating {
   font-family: var(--font-display); font-size: 1rem; line-height: 1;
 }

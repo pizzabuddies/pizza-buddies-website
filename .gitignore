@@ -16,3 +16,12 @@ next-env.d.ts
 
 # local tooling / previous static build kept for reference
 /.claude/
+
+# Original full-size photos dropped into app/gallery/ (web-sized copies that the
+# site actually uses live in public/assets/img/)
+/app/gallery/*.jpg
+/app/gallery/*.jpeg
+/app/gallery/*.png
+
+# scratch notes
+/instructionsFromClaude.txt
