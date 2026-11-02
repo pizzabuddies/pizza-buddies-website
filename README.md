@@ -94,8 +94,8 @@ in site copy were intentionally kept.
 
 All photos live in `public/assets/img/`. To change one, replace the file with a
 new one **with the same file name** and push to GitHub; Vercel redeploys it.
-Colour photos go straight in, because every photo is converted to black & white
-automatically. Photos are shown through [`components/Photo.tsx`](components/Photo.tsx)
+Photos are shown in full colour. (To bring back the black & white treatment, see
+the comment on the `.ph-img` rule in `app/globals.css`.) Photos are shown through [`components/Photo.tsx`](components/Photo.tsx)
 (lazy loading, responsive sizes, crop position). The full list of photos, where
 each appears and which are stand-ins is in
 [`public/assets/img/SHOT-LIST.md`](public/assets/img/SHOT-LIST.md).

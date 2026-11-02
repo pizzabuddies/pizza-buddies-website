@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-/* A site photograph: black & white treatment (via .ph-img), lazy loading and
+/* A site photograph: shown in full colour, with lazy loading and
    responsive sizing handled by next/image. Files live in public/assets/img/.
 
    aspect: one of the ratio classes in globals.css (ph--45, ph--43, ph--34, ph--11 ...).
