@@ -23,14 +23,18 @@ import { Resend } from 'resend';
         'Pizza Buddies Website <enquiries@pizzabuddies.co.uk>'
    ============================================================ */
 
-// Where enquiries are delivered:
-const TO_EMAIL = 'info@pizzabuddies.co.uk';
+// Where enquiries are delivered. TEMPORARY: while pizzabuddies.co.uk is not
+// verified in Resend, this MUST be the email address the Resend account was
+// created with. Once the domain is verified, change it back to
+// 'info@pizzabuddies.co.uk' and update FROM_EMAIL below.
+const TO_EMAIL = 'vishant@pizzabuddies.co.uk';
 
-// The "from" address. This only works once pizzabuddies.co.uk shows as
-// "Verified" in Resend (Domains page). Until then Resend refuses to send.
-// (Before a domain is verified, 'onboarding@resend.dev' can be used, but it
-// only delivers to the email address your Resend account was created with.)
-const FROM_EMAIL = 'Pizza Buddies Website <enquiries@pizzabuddies.co.uk>';
+// The "from" address. 'onboarding@resend.dev' is Resend's shared test sender
+// and needs no domain setup, but it only delivers to the Resend account's own
+// email (see TO_EMAIL above). Once pizzabuddies.co.uk shows as "Verified" in
+// Resend (Domains page), switch to:
+//   'Pizza Buddies Website <enquiries@pizzabuddies.co.uk>'
+const FROM_EMAIL = 'Pizza Buddies Website <onboarding@resend.dev>';
 
 type QuotePayload = {
   location: string;
